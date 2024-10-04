@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="30dp"
+    android:gravity="center"
+    android:background="@drawable/event"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Registration"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <!-- Event Name Field -->
+        <EditText
+            android:id="@+id/eventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Name"
+            android:inputType="text"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Participant Name Field -->
+        <EditText
+            android:id="@+id/participantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Participant Name"
+            android:inputType="text"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Mobile Number Field -->
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp" />
+        <EditText
+            android:id="@+id/emailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Password Field (with toggle) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:id="@+id/password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Event Type Spinner -->
+        <Spinner
+            android:id="@+id/spinnerEventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/design_default_color_primary_dark"
+            android:text="Join event" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/outputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>
