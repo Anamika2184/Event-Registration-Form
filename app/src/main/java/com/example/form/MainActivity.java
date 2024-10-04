@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initializing views
+
         eventName = findViewById(R.id.eventName);
         participantName = findViewById(R.id.participantName);
         mobileNumber = findViewById(R.id.mobileNumber);
@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
         outputText = findViewById(R.id.outputText);
         outputLayout = findViewById(R.id.outputLayout);
 
-        // Setting up the Event Type Spinner
+
         String[] eventTypes = {"Select Event Type", "Conference", "Workshop", "Seminar", "Webinar"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, eventTypes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerEventType.setAdapter(adapter);
 
-        // Setting up the Submit button click listener
+
         joineventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         String passwordText = password.getText().toString();
         String selectedEventType = spinnerEventType.getSelectedItem().toString();
 
-        // Validating the input fields
+
         if (TextUtils.isEmpty(eventNameText)) {
             eventName.setError("Please enter event name");
             return;
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // If everything is valid, display the output
+
         outputLayout.setVisibility(View.VISIBLE);
         outputText.setText("Event Name: " + eventNameText + "\n" +
                 "Participant Name: " + participantNameText + "\n" +
